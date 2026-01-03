@@ -19,55 +19,63 @@ If you are developing a production application, we recommend updating the config
 export default defineConfig([
   globalIgnores(['dist']),
   {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+    # Scrollscape — Travel frontend
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+    A modern React + TypeScript single-page frontend built with Vite for the Scrollscape travel experience.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    ## Features
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+    - React 18 + TypeScript
+    - Fast HMR with Vite
+    - Opinionated ESLint + TS config
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+    ## Quick start
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    Prerequisites: Node.js 18+ and npm or pnpm
+
+    Install dependencies:
+
+    ```bash
+    npm install
+    # or
+    pnpm install
+    ```
+
+    Run development server:
+
+    ```bash
+    npm run dev
+    # or
+    pnpm dev
+    ```
+
+    Build for production:
+
+    ```bash
+    npm run build
+    # or
+    pnpm build
+    ```
+
+    Preview the production build:
+
+    ```bash
+    npm run preview
+    # or
+    pnpm preview
+    ```
+
+    ## Repository
+
+    This repository is hosted at: https://github.com/kaustubhhhh7/Scrollscape-travel-frontend.git
+
+    ## Contributing
+
+    - Open issues or PRs on the GitHub repo.
+    - Follow existing coding style and commit message conventions.
+
+    ## License
+
+    See the repository for license information.
+
+    Enjoy exploring Scrollscape!
