@@ -27,7 +27,6 @@ const Amenities = () => {
 
     return (
         <section id="amenities" className="bg-surface-bg border-y border-white/5 relative overflow-hidden py-32">
-            {/* Background Decorative Element */}
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-leather.png')] opacity-10" />
 
             <div className="container mx-auto px-8 relative z-10">

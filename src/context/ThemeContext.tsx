@@ -12,7 +12,6 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     const [theme, setTheme] = useState<Theme>(() => {
-        // Check localStorage or system preference
         const saved = localStorage.getItem('lumina-theme');
         if (saved === 'dark' || saved === 'light') return saved;
         return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';

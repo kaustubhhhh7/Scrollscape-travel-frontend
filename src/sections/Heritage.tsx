@@ -12,7 +12,6 @@ const Heritage = () => {
 
     return (
         <section ref={ref} className="py-40 bg-[#0F0F0F] text-[#F6F5F2] relative overflow-hidden">
-            {/* Background Texture */}
             <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] mix-blend-overlay" />
 
             <div className="max-w-6xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-24 items-center relative z-10">

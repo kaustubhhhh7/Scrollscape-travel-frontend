@@ -26,7 +26,7 @@ const ArtFooter = () => {
                 </div>
 
                 <div className="col-span-12 mt-12 flex justify-between items-end opacity-10">
-                    <span className="text-8xl md:text-[12vw] leading-[0.8] font-serif -ml-2">2026</span>
+                    <span className="text-8xl md:text-[12vw] leading-[0.8] font-serif -ml-2">2025</span>
                     <span className="text-[10px] uppercase tracking-[0.5em] mb-2">Edition IV</span>
                 </div>
 

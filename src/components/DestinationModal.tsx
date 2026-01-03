@@ -19,7 +19,6 @@ const DestinationModal = ({ destination, onClose }: DestinationModalProps) => {
         <AnimatePresence>
             {destination && (
                 <>
-                    {/* Backdrop */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -28,14 +27,12 @@ const DestinationModal = ({ destination, onClose }: DestinationModalProps) => {
                         className="fixed inset-0 bg-ink/90 backdrop-blur-md z-[60]"
                     />
 
-                    {/* Modal Content */}
                     <motion.div
                         layoutId={`destination-container-${destination.id}`}
                         className="fixed inset-0 z-[70] flex items-center justify-center p-4 md:p-8 pointer-events-none"
                     >
                         <div className="bg-paper text-ink w-full max-w-5xl h-[85vh] grid grid-cols-1 md:grid-cols-2 overflow-hidden shadow-2xl pointer-events-auto relative">
 
-                            {/* Image Section */}
                             <div className="relative h-1/2 md:h-full overflow-hidden">
                                 <motion.img
                                     layoutId={`destination-image-${destination.id}`}
@@ -49,7 +46,6 @@ const DestinationModal = ({ destination, onClose }: DestinationModalProps) => {
                                 </div>
                             </div>
 
-                            {/* Content Section */}
                             <div className="p-6 md:p-16 flex flex-col justify-between h-1/2 md:h-full relative overflow-y-auto md:overflow-hidden">
                                 <button
                                     onClick={onClose}

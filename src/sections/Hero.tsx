@@ -25,7 +25,6 @@ const Hero = () => {
 
     return (
         <section id="home" className="relative h-screen w-full overflow-hidden flex items-center justify-center pt-0 pb-0">
-            {/* Background Section */}
             <div className="absolute inset-0 overflow-hidden">
                 <motion.div
                     initial={{ scale: 1.2 }}
@@ -35,7 +34,7 @@ const Hero = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-primary-bg/70 via-primary-bg/30 to-primary-bg" />
 
-                {/* Subtle Cinematic Overlay */}
+
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 0.5 }}
@@ -94,7 +93,6 @@ const Hero = () => {
                 </motion.div>
             </motion.div>
 
-            {/* Floating Sand Glow */}
             <motion.div
                 animate={{
                     y: [0, -30, 0],
@@ -108,7 +106,6 @@ const Hero = () => {
                 className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-sand/5 blur-[150px] rounded-full pointer-events-none"
             />
 
-            {/* Scroll Indicator */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

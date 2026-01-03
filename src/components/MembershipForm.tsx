@@ -16,7 +16,6 @@ const MembershipForm = ({ isOpen, onClose }: MembershipFormProps) => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Simulate submission
         setTimeout(() => {
             onClose();
             setFormState({ name: '', email: '', interest: '' });
@@ -27,7 +26,6 @@ const MembershipForm = ({ isOpen, onClose }: MembershipFormProps) => {
         <AnimatePresence>
             {isOpen && (
                 <>
-                    {/* Backdrop */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -36,7 +34,6 @@ const MembershipForm = ({ isOpen, onClose }: MembershipFormProps) => {
                         className="fixed inset-0 bg-ink/90 backdrop-blur-sm z-[60]"
                     />
 
-                    {/* Modal Container */}
                     <motion.div
                         initial={{ opacity: 0, y: 100 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -44,7 +41,6 @@ const MembershipForm = ({ isOpen, onClose }: MembershipFormProps) => {
                         transition={{ type: "spring", damping: 25, stiffness: 300 }}
                         className="fixed inset-0 z-[70] flex items-center justify-center p-4 pointer-events-none"
                     >
-                        {/* Form Card */}
                         <div className="bg-[#111] border border-white/10 w-full max-w-lg p-12 relative pointer-events-auto shadow-2xl">
                             <button
                                 onClick={onClose}

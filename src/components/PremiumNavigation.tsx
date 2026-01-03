@@ -6,34 +6,34 @@ const navConfig = [
     {
         id: 'home',
         label: 'Home',
-        mood: 'cinematic', // Dark background, Light text
-        accent: '#D9C9A6', // Champagne
+        mood: 'cinematic',
+        accent: '#D9C9A6',
         icon: Home
     },
     {
         id: 'about',
-        label: 'Journal', // "About"
-        mood: 'calm', // Light background, Dark text
-        accent: '#065F46', // Emerald
+        label: 'Journal',
+        mood: 'calm',
+        accent: '#065F46',
         icon: User
     },
     {
         id: 'experiences',
-        label: 'Works', // "Experiences"
+        label: 'Works',
         mood: 'cinematic',
-        accent: '#D4AF37', // Gold
+        accent: '#D4AF37',
         icon: Compass
     },
     {
         id: 'destinations',
-        label: 'Locations', // "Destinations"
-        mood: 'vibrant', // Image bg
-        accent: '#F9E29B', // Light Gold
+        label: 'Locations',
+        mood: 'vibrant',
+        accent: '#F9E29B',
         icon: MapPin
     },
     {
         id: 'contact',
-        label: 'Connect', // "Contact"
+        label: 'Connect',
         mood: 'cinematic',
         accent: '#D9C9A6',
         icon: Mail
@@ -44,8 +44,8 @@ const PremiumNavigation = () => {
     const [activeSection, setActiveSection] = useState('home');
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
 
-    // Handle Resize to close mobile menu on desktop transition
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 768) {
@@ -56,11 +56,6 @@ const PremiumNavigation = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const [isHovered, setIsHovered] = useState(false);
-
-    // ... (keep existing useEffects)
-
-    // Scroll Detection for Opacity
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
@@ -69,11 +64,10 @@ const PremiumNavigation = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Intersection Observer for Section Tracking
     useEffect(() => {
         const options = {
             root: null,
-            rootMargin: '-40% 0px -40% 0px', // Center focused
+            rootMargin: '-40% 0px -40% 0px',
             threshold: 0
         };
 
@@ -115,7 +109,6 @@ const PremiumNavigation = () => {
             transition={{ duration: 0.5, ease: 'easeOut' }}
             className="fixed top-6 right-6 z-50 flex flex-col items-end"
         >
-            {/* Desktop Navigation - Hover-Activated Vertical Cluster */}
             <div
                 className="hidden md:flex flex-col items-end gap-2 pointer-events-auto p-4 -mr-4"
                 onMouseEnter={() => setIsHovered(true)}
@@ -139,7 +132,7 @@ const PremiumNavigation = () => {
                                 className={`h-10 px-4 rounded-full flex items-center justify-end gap-3 transition-colors duration-500 backdrop-blur-md border border-transparent
                                     ${isActive
                                         ? isDarkText ? 'bg-white/90 border-black/5 shadow-sm' : 'bg-black/40 border-white/10 shadow-lg'
-                                        : 'hover:bg-black/5 bg-transparent' // Invisible bg for inactive
+                                        : 'hover:bg-black/5 bg-transparent'
                                     }
                                 `}
                                 style={{
@@ -165,7 +158,6 @@ const PremiumNavigation = () => {
                 </AnimatePresence>
             </div>
 
-            {/* Mobile Navigation - Top Right Expandable Pill */}
             <div className="md:hidden pointer-events-auto flex flex-col items-end gap-2">
                 <motion.button
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
