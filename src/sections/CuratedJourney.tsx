@@ -3,25 +3,37 @@ import { useRef } from 'react';
 
 const steps = [
     {
-        day: "01",
+        day: "06",
         title: "The Arrival",
         desc: "Private jet transit to the edge of the map. Champagne reception upon landing at our remote airstrip.",
         img: "https://images.unsplash.com/photo-1520437358207-323b43b50729?w=1600&q=80"
     },
     {
-        day: "03",
+        day: "05",
+        title: "The Sanctuary",
+        desc: "Acclimatize in our eco-glass pods nestled within the ancient fern forest. Silence redefined.",
+        img: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=1600&q=80"
+    },
+    {
+        day: "04",
         title: "The Horizon",
         desc: "Helicopter transfers to nomadic camps. Explore landscapes that have remained unchanged for millennia.",
         img: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600&q=80"
     },
     {
-        day: "05",
+        day: "03",
+        title: "The Void",
+        desc: "A spiritual trek across the salt flats. Guided meditation under the most star-dense sky on Earth.",
+        img: "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=1600&q=80"
+    },
+    {
+        day: "02",
         title: "The Zenith",
         desc: "Crest unexplored peaks and enjoy a Michelin-starred dinner atop the world's highest private terrace.",
         img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80"
     },
     {
-        day: "07",
+        day: "01",
         title: "The Ascent",
         desc: "A final three-day retreat in our glass sanctuary for reflection before the private return journey.",
         img: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1600&q=80"
@@ -34,12 +46,17 @@ const CuratedJourney = () => {
         target: containerRef,
     });
 
-    // Inversed scroll: content moves from left to right (Starts at -75% and moves to 0%)
-    const x = useTransform(scrollYProgress, [0, 1], ["-75%", "0%"]);
+    // Inversed scroll: content moves from left to right (Starts at -90% and moves to 0% to accommodate wider content)
+    const x = useTransform(scrollYProgress, [0, 1], ["-90%", "0%"]);
+
 
     return (
         <section ref={containerRef} className="relative h-[300vh] bg-paper">
             <div className="sticky top-0 h-screen overflow-hidden flex items-center">
+                {/* Luxury Fade Gradients */}
+                <div className="absolute left-0 top-0 bottom-0 w-[15vw] bg-gradient-to-r from-[var(--color-paper)] to-transparent z-10 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-[15vw] bg-gradient-to-l from-[var(--color-paper)] to-transparent z-10 pointer-events-none" />
+
                 <motion.div style={{ x }} className="flex flex-row-reverse gap-12 md:gap-24 px-12 md:px-24 items-center">
                     {/* Introductory Text now on the RIGHT side in the DOM, 
                         but flex-row-reverse makes it the first thing visible at x="-75%" */}
