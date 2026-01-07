@@ -93,9 +93,6 @@ const CuratedJourney = () => {
 
                     <div className="flex flex-col justify-center min-w-[50vw] md:min-w-[30vw] border-r border-ink/10 pr-24 mr-12 md:mr-24">
                         <h3 className="text-5xl md:text-8xl font-serif text-ink opacity-10 uppercase tracking-tighter">Your <br /> Story <br /> Awaits</h3>
-                        <button className="mt-12 text-[10px] uppercase tracking-[0.6em] text-gold border border-gold/30 px-12 py-5 hover:bg-gold hover:text-ink transition-all w-fit font-bold">
-                            Begin Expedition
-                        </button>
                     </div>
                 </motion.div>
             </div>
