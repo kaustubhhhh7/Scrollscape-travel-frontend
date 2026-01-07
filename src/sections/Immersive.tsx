@@ -13,16 +13,19 @@ const Immersive = () => {
     const textOpacity = useTransform(scrollYProgress, [0.6, 0.9], [1, 0]);
 
     return (
-        <section id="destinations" ref={containerRef} className="h-[200vh] relative">
+        <section id="destinations" ref={containerRef} className="h-[220vh] relative">
+
             <div className="sticky top-0 h-screen w-full overflow-hidden">
-                <motion.div style={{ scale, opacity }} className="absolute inset-0 w-full h-full">
+                <motion.div style={{ scale, opacity }} className="absolute inset-0 w-full h-full bg-ink">
                     <img
-                        src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&q=80&w=2560"
+                        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=2560&q=80"
                         alt="Immersive Ocean"
-                        className="w-full h-full object-cover brightness-75 grayscale-[30%]"
+                        className="w-full h-full object-cover grayscale-[10%] brightness-[0.7]"
                     />
-                    <div className="absolute inset-0 bg-ink/20" />
+                    <div className="absolute inset-0 bg-ink/10" />
                 </motion.div>
+
+
 
                 <motion.div style={{ opacity: textOpacity }} className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <div className="text-center px-8 mix-blend-overlay">
