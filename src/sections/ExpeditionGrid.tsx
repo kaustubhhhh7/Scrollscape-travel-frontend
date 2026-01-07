@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, MapPin, Compass, Wind, Mountain, X } from 'lucide-react';
+import { ArrowRight, Compass, Wind, Mountain, X } from 'lucide-react';
 
 const expeditions = [
     {
